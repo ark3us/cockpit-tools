@@ -55,13 +55,12 @@ jobs:
         run: npm run sync-version
 
       - name: Build AppImage
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: npx tauri build --ci --bundles appimage
+        run: |
+          npx tauri build --ci --bundles appimage --no-sign --config '{"bundle":{"createUpdaterArtifacts":false}}'
 
       - name: Upload AppImage artifact
         uses: actions/upload-artifact@v4
         with:
           name: cockpit-tools-appimage
           if-no-files-found: error
-          path: src-tauri/target/release/bundle/appimage/*.AppImage
+          path: target/release/bundle/appimage/*.AppImage
