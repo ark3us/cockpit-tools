@@ -1,5 +1,7 @@
 # Cockpit Tools
 
+> This repository is a fork of the original Cockpit Tools project with an added AppImage workflow.
+
 [English](README.en.md) · 简体中文
 
 [![GitHub stars](https://img.shields.io/github/stars/jlcodes99/cockpit-tools?style=flat&color=gold)](https://github.com/jlcodes99/cockpit-tools)
